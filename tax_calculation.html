@@ -1,0 +1,290 @@
+<style>
+                    
+    :root {
+      --shadow-color: #000000;
+      --shadow-color-light: #34EC20;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #D6FED2;
+      opacity: 0.8;
+      background-image: radial-gradient(#000000 0.5px, #D6FED2 0.5px);
+      background-size: 10px 10px;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    table, td, th {
+        border: 1px solid black;
+        text-align: centre;
+        }
+    p {
+      font-size: 65px;
+      text-transform: uppercase;
+      font-family: "Archivo Black", "Archivo", sans-serif;
+      font-weight: normal;
+      display: block;
+      height: auto;
+      text-align: center;
+    }
+
+    .logo-1 {
+      color: white;
+      animation: neon 3s infinite;
+    }
+    .acb{
+        text-decoration: solid;
+        text-align: center;
+
+        font-weight: bold;
+        font-size: large;
+        
+}                        
+    
+
+    @keyframes neon {
+      0% {
+        text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+        0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+        0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+      }
+      50% {
+        text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+        0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+        0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+      }
+      100% {
+        text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+        0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+        0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+      }
+    }
+                      table {
+border-collapse: collapse;
+                      
+}td {
+text-align: center;
+padding:2px;
+}
+
+    /* Dropdown Button */
+    .dropbtn {
+      font-family: "Archivo Black", "Archivo", sans-serif;
+      background-color: #34EC20;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+    .mydiv{
+                      -webkit-box-shadow:0px 0px 10px 3px #00f900 ;
+    -moz-box-shadow:0px 0px 10px 3px #00f900 ;
+    box-shadow:0px 0px 10px 3px #000000 ;
+                      padding:20px;
+                      margin:20px;
+    
+    }
+    .mydiv1{
+                      -webkit-box-shadow:0px 0px 10px 3px #00f900 ;
+    -moz-box-shadow:0px 0px 10px 3px #00f900 ;
+    box-shadow:0px 0px 10px 3px #000000 ;
+                      padding:20px;
+                      margin:20px;
+                      width:30%;
+    
+    }
+                      
+
+    .myButton {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #70e038 5%, #698f56 100%);
+	background-color:#70e038;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #698f56 5%, #70e038 100%);
+	background-color:#698f56;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+    .dashboard {
+      padding: 20px;
+    }
+
+    .title-bar {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .scrollable-div {
+      overflow-y: auto;
+      max-height: 400px;
+      border: 1px solid #000000;
+      padding: 10px;
+      margin-top: 20px;
+                      
+    } 
+    table {
+        
+            font-family: 'Arial', sans-serif;
+            border: 1px solid #ccc;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+      table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        table th{
+            border: 1px solid #ccc;
+            padding: 8px;
+            background: #24943A;
+  background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  border-bottom: 0px solid #444444;
+        }input {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #94e91e;
+	background: rgba(#6ddf1b, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #E91E63;
+}
+    </style>
+<center style="margin: 30px; text-align: center;">
+<div id=outer><div class='acb'>Income Tax Calculator in India AY 2021-22</div><br><div id=cover>
+    <form name=it><table class=main><col class=w60><col class=w40>
+    <tr><td>Opted for Sec. 115BAC<td><select id=opt onchange=itax2122();><option value='no' selected>No<option value='yes'>Yes</select>
+    <tr class=stat><td>Select Status<td><select id=age ><option value='b60' selected>Resident < 60 years<option value='a60'>>= 60 < 80 years<option value='a80'>>= 80 years<option value=huf>HUF / NRE</select>
+    <tr><td>Income<td><input type=number id=tinc>
+    <tr><td>Eligible Deductions<td><input type=number id=ed>
+    <tr><td><button class="myButton" type=reset >Reset</button><td><button class="myButton" type=button onclick=itax2122();>Submit</button>
+    <tr><td>Taxable Income<td><input class=op id=ninc >
+    <tr><td>Income Tax<td><input class=op id=itax>
+    <tr><td>Surcharge<td><input class=op id=surch>
+    <tr><td>Education Cess<td><input class=op id=ecess>
+    <tr><td>Total Tax Liability<td><input class=op id=liab>
+
+    </center>
+
+
+
+<script>function show(elmnt){ document.getElementById(elmnt).style.display='block'}function hide(elmnt){ document.getElementById(elmnt).style.display='none'}
+    function sc(elm) {var x = document.getElementsByClassName(elm);var i;for (i = 0; i < x.length; i++) {x[i].style.display=''}}function hc(elm){var x = document.getElementsByClassName(elm);var i;for (i = 0; i < x.length; i++) {x[i].style.display='none'}}
+    // -- Itax
+    function itax2122(){var age= document.getElementById('age').value; var tax; var liab; var tcredit=0; var surch=0; var ttax; var mtr=0; var ecess;
+    var inc = document.getElementById('tinc').value*1 - document.getElementById('ed').value*1;var opt= document.getElementById('opt').value;
+    
+    if(opt=='no'){
+    if((age=='b60' || age=='huf')&&inc>1000000){tax=112500*1+Math.round((inc*1-1000000*1)*30/100)}
+    else if((age=='b60' || age=='huf')&&inc>500000&&inc<=1000000){tax=12500*1+Math.round((inc*1-500000*1)*20/100)}
+    else if((age=='b60' || age=='huf')&&inc>200000&&inc<=500000){tax=Math.round((inc*1-250000*1)*5/100)}
+    else if((age=='b60' || age=='huf')&&inc<=250000){tax=0}
+    else if(age=='a60'&&inc>1000000){tax=110000*1+Math.round((inc*1-1000000*1)*30/100)}
+    else if(age=='a60'&&inc>500000&&inc<=1000000){tax=10000*1+Math.round((inc*1-500000*1)*20/100)}
+    else if(age=='a60'&&inc>250000&&inc<=500000){tax=Math.round((inc*1-300000*1)*5/100)}
+    else if(age=='a60'&&inc<300000){tax=0}
+    else if(age=='a80'&&inc>1000000){tax=100000*1+Math.round((inc*1-1000000*1)*30/100)}
+    else if(age=='a80'&&inc>500000&&inc<=1000000){tax=Math.round((inc*1-500000*1)*20/100)}
+    else if(age=='a80'&&inc<=500000){tax=0} 
+    if(age=='b60' && inc <=500000 && tax>0){tcredit=Math.round(tax)}
+    if(age=='a60' && inc <=500000 && tax>0){tcredit=Math.round(tax)}}
+    if (opt=='yes'){
+    if(inc > 1500000){itax=187500+(inc-1500000)*30/100}
+    else if(inc<=1500000&&inc>1250000){tax=125000+((inc-1250000)*25/100)}
+    else if(inc<=1250000&&inc>1000000){tax=75000+((inc-1000000)*20/100)}
+    else if(inc<=1000000&&inc>750000){tax=37500+((inc-750000)*15/100)}
+    else if(inc<=750000&&inc>500000){tax=12500+((inc-500000)*10/100)}
+    else if(inc<=500000&&inc>25000){tax=((inc-250000)*5/100)}
+    else if(inc<=250000&&inc>0){tax=0}}
+    if(inc<=500000&&inc>250000)tcredit=tax;
+    if(inc>500000){tcredit=0};
+    tax=tax*1-tcredit*1;
+    if(inc>5000000 && inc <=10000000){surch=tax*10/100;
+    if(surch>0 && (age=='b60'||age=='huf') && (inc*1-tax*1.10) <=3687500){ mtr=surch*1-(inc*1-3687500*1-tax*1)};
+    if(surch>0 && age=='a60' && (inc*1-tax*1.10) <=3690000){ mtr=surch*1-(inc*1-3690000*1-tax*1)};
+    if (surch>0 && age=='a80' && (inc*1-tax*1.10)<=3700000){ mtr=surch*1-(inc*1-3700000*1-tax*1)}}
+    if(inc>10000000){surch=tax*15/100;
+    if(surch>0 && (age=='b60'||age=='huf') && (inc*1-tax*1.15) <=6906250){mtr=surch*1-(inc*1-6906250*1-tax*1)};
+    if(surch>0 && age=='a60' && (inc*1-tax*1.15) <=6909000){mtr=surch*1-(inc*1-6909000*1-tax*1)};
+    if(surch>0 && age=='a80' && (inc*1-tax*1.15) <=6920000){mtr=surch*1-(inc*1-6920000*1-tax*1)}}
+    if(inc<=5000000){surch=0}
+    surch=surch*1-mtr*1;
+    ttax=tax*1+surch*1;
+    ecess=Math.round(ttax*.04);liab=ttax*1 + ecess*1;
+     document.getElementById('ninc').value=Math.round(inc);
+     document.getElementById('itax').value=Math.round(tax);
+     document.getElementById('surch').value=Math.round(surch);
+     document.getElementById('ecess').value=Math.round(ecess);
+     document.getElementById('liab').value=Math.round(liab)}</script>
