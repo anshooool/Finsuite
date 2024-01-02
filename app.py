@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, render_template
 from bs4 import BeautifulSoup as BS
 import requests as req
 import pandas as pd
@@ -13,6 +13,17 @@ url = "https://www.businesstoday.in/latest/economy"
 webpage = req.get(url)
 trav = BS(webpage.content, "html.parser")
 
+@app.route('/tax-calculation')
+def tax_calculation():
+    return render_template('tax_calculation.html')
+
+@app.route('/portfolio-management')
+def portfolio_management():
+    return render_template('portfolio_management.html')
+
+@app.route('/stock-analysis')
+def stock_analysis():
+    return render_template('stock_analysis.html')
 @app.route('/')
 def index():
     return render_template_string('''
@@ -106,6 +117,15 @@ def index():
                 
                 }
                 .mydiv1{
+                                  -webkit-box-shadow:0px 0px 10px 3px #00f900 ;
+                -moz-box-shadow:0px 0px 10px 3px #00f900 ;
+                box-shadow:0px 0px 10px 3px #000000 ;
+                                  padding:20px;
+                                  margin:20px;
+                                  width:30%;
+                
+                }
+                .mydiv2{
                                   -webkit-box-shadow:0px 0px 10px 3px #00f900 ;
                 -moz-box-shadow:0px 0px 10px 3px #00f900 ;
                 box-shadow:0px 0px 10px 3px #000000 ;
@@ -218,7 +238,7 @@ def index():
                         <div class="dropdown-content">
                             <a href="#">View Portfolio</a>
                             <a href="#">Analyse Stock</a>
-                            <a href="#">Tax calculator</a>
+                            <a href="/tax-calculation">Tax calculator</a>
                         </div>
                     </div>
                     
@@ -226,9 +246,12 @@ def index():
                 </div >
                 <div class="mydiv"> <h2>Latest Financial News</h2>
                 <div class="scrollable-div" id="outputContainer"></div></div>
+                                  
                                   <div class="mydiv1"> <h2>Latest Global Indices</h2>
                 <div class="scrollable-div" id="outputContainer2"></div></div>
-            </div>
+                                  </div>
+                                  <div class="mydiv2">Latest Indian Indices<div class="scrollable-div" id="outputContainer3"></div></div>
+            
             
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
@@ -249,6 +272,7 @@ def index():
                     // Fetch output every 5 minutes (adjust as needed)
                     setInterval(fetchOutput, 5 * 60 * 1000);
                 });
+                                  
                                   document.addEventListener('DOMContentLoaded', function () {
                     // Function to fetch and display the output
                     function fetchOutput() {
@@ -256,6 +280,24 @@ def index():
                             .then(response => response.text())
                             .then(data => {
                                 const outputContainer = document.getElementById('outputContainer2');
+                                outputContainer.innerHTML = data;
+                            })
+                            .catch(error => console.error('Error fetching output:', error));
+                    }
+
+                    // Initial fetch when the page loads
+                    fetchOutput();
+
+                    // Fetch output every 5 minutes (adjust as needed)
+                    setInterval(fetchOutput, 5 * 60 * 1000);
+                });
+                                  document.addEventListener('DOMContentLoaded', function () {
+                    // Function to fetch and display the output
+                    function fetchOutput() {
+                        fetch('/get_nifty')  // Route to fetch output from Flask app
+                            .then(response => response.text())
+                            .then(data => {
+                                const outputContainer = document.getElementById('outputContainer3');
                                 outputContainer.innerHTML = data;
                             })
                             .catch(error => console.error('Error fetching output:', error));
@@ -303,6 +345,33 @@ def get_indeices():
     html_table = df_selected.to_html(index=False)
 
     return(html_table)
+@app.route('/get_nifty')
+def get_nifty():
+
+  url = "https://www.tickertape.in/indices/nifty-50-index-.NSEI"
+  header = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/681.3.9'
+    }
+  try:
+      response = req.get(url)
+      response.raise_for_status()
+
+      soup = BS(response.text, 'html.parser')
+
+      # Find elements with class containing "current-price" and "change percentage-value"
+      current_price_element = soup.find('span', class_=lambda x: x and 'current-price' in x)
+      percent_change_element = soup.find('span', class_=lambda x: x and 'change percentage-value' in x)
+
+      if current_price_element and percent_change_element:
+          current_price = current_price_element.text.strip()
+          percent_change = percent_change_element.text.strip()
+
+          return (f"<table><tr><td>Current Price: </td><td>{current_price} </td>")
+      else:
+          print("Current price or percent change element not found on the page.")
+  except req.exceptions.RequestException as e:
+    print(f"Error fetching data: {e}")
+
 
 
 
