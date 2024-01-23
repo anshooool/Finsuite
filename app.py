@@ -1,13 +1,21 @@
 # app.py
-from flask import Flask, render_template_string, render_template
+from flask import Flask, render_template_string, render_template, request
 from bs4 import BeautifulSoup as BS
 import requests as req
 import pandas as pd
 from tabulate import tabulate
-
+import yfinance as yf
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 app = Flask(__name__)
-
+def get_image_bytes(fig):
+    # Convert the Matplotlib figure to bytes
+    img_bytes = io.BytesIO()
+    FigureCanvas(fig).print_png(img_bytes)
+    img_bytes.seek(0)
+    return img_bytes.getvalue()
 # Scraping code
 url = "https://www.businesstoday.in/latest/economy"
 webpage = req.get(url)
@@ -21,9 +29,9 @@ def tax_calculation():
 def portfolio_management():
     return render_template('portfolio_management.html')
 
-@app.route('/stock-analysis')
+@app.route('/search_stock')
 def stock_analysis():
-    return render_template('stock_analysis.html')
+    return render_template('search_stock.html')
 @app.route('/')
 def index():
     return render_template_string('''
@@ -237,7 +245,7 @@ def index():
                         <button class="dropbtn">Menu</button>
                         <div class="dropdown-content">
                             <a href="#">View Portfolio</a>
-                            <a href="#">Analyse Stock</a>
+                            <a href="/search_stock">Analyse Stock</a>
                             <a href="/tax-calculation">Tax calculator</a>
                         </div>
                     </div>
@@ -327,6 +335,41 @@ def get_output():
             M += 1
     return output
 
+
+
+
+# Import the required module
+
+import io
+# ... (rest of your code)
+
+@app.route('/search', methods=['POST'])
+def search():
+    if request.method == 'POST':
+        stock_ticker = request.form['stock_ticker']
+        ticker = yf.Ticker(stock_ticker)
+
+        # Get detailed information about the stock symbol
+        info = ticker.info
+        data = 'Detailed Information:\n'
+        for key, value in info.items():
+            data += f"{key} : {value}\n"
+            data += "-" * 10 + '\n'
+
+        # Get historical OHLC prices and other financial data
+        history = ticker.history(period="1mo")
+
+        # Create the plot before appending the historical data
+    
+        # Append the historical data to the data string
+        data += "\nHistorical Data:\n"
+        data += history.to_string()  # Convert the Pandas DataFrame to a string
+
+        return render_template('result.html', stock_ticker=data)
+
+
+
+
 @app.route('/get_indices')
 def get_indeices():
 
@@ -366,7 +409,7 @@ def get_nifty():
           current_price = current_price_element.text.strip()
           percent_change = percent_change_element.text.strip()
 
-          return (f"<table><tr><td>Current Price: </td><td>{current_price} </td>")
+          return (f"<table><tr><td>Nifty: </td><td>{current_price} </td>")
       else:
           print("Current price or percent change element not found on the page.")
   except req.exceptions.RequestException as e:
