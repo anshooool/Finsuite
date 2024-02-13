@@ -9,4 +9,6 @@
 <img width="1212" alt="Screenshot 2024-01-24 at 12 38 56 AM" src="https://github.com/anshooool/Finsuite/assets/140979513/fc3de3be-b885-44ef-aca3-a27cc7f9e567">
 <img width="1212" alt="Screenshot 2024-01-24 at 12 39 06 AM" src="https://github.com/anshooool/Finsuite/assets/140979513/d8002dd3-d8fc-4276-99f4-b0a80ed5d1d5"><img width="468" alt="Screenshot 2024-01-24 at 12 39 20 AM" src="https://github.com/anshooool/Finsuite/assets/140979513/9c1f116a-e64b-4784-ab46-d0b34704787f">
 
-<img width="1053" alt="Screenshot 2024-01-24 at 12 40 30 AM" src="https://github.com/anshooool/Finsuite/assets/140979513/d4f79483-c5c5-4062-a74f-a4769549beff">
+<img width="1053" alt="Screenshot 2024-01-24 at 12 40 30 AM" src="https://github.com/anshooool/Finsuite/assets/140979513/d4f79483-c5c5-4062-a74f-a4769549beff"><img width="1173" alt="Screenshot 2024-02-13 at 11 00 57 PM" src="https://github.com/anshooool/Finsuite/assets/140979513/cefe967c-e386-412a-9267-f1b2df1a64c6">
+<img width="1173" alt="Screenshot 2024-02-13 at 11 00 40 PM" src="https://github.com/anshooool/Finsuite/assets/140979513/aa962c6a-9606-40d5-a305-ee0fa8d388b4">
+
