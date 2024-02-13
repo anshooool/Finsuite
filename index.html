@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GST</title>
+  <style>
+                    
+    :root {
+      --shadow-color: #000000;
+      --shadow-color-light: #34EC20;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #D6FED2;
+      opacity: 0.8;
+      background-image: radial-gradient(#000000 0.5px, #D6FED2 0.5px);
+      background-size: 10px 10px;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    table, td, th {
+        border: 1px solid black;
+        text-align: centre;
+        }
+    p {
+      font-size: 65px;
+      text-transform: uppercase;
+      font-family: "Archivo Black", "Archivo", sans-serif;
+      font-weight: normal;
+      display: block;
+      height: auto;
+      text-align: center;
+    }
+
+    .logo-1 {
+      color: white;
+      animation: neon 3s infinite;
+    }
+    .acb{
+        text-decoration: solid;
+        text-align: center;
+
+        font-weight: bold;
+        font-size: large;
+        
+}                        
+    
+
+    @keyframes neon {
+      0% {
+        text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+        0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+        0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+      }
+      50% {
+        text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+        0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+        0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+      }
+      100% {
+        text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+        0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+        0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+      }
+    }
+                      table {
+border-collapse: collapse;
+                      
+}td {
+text-align: center;
+padding:2px;
+}
+
+    /* Dropdown Button */
+    .dropbtn {
+      font-family: "Archivo Black", "Archivo", sans-serif;
+      background-color: #34EC20;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+    .mydiv{
+                      -webkit-box-shadow:0px 0px 10px 3px #00f900 ;
+    -moz-box-shadow:0px 0px 10px 3px #00f900 ;
+    box-shadow:0px 0px 10px 3px #000000 ;
+                      padding:20px;
+                      margin:20px;
+    
+    }
+    .mydiv1{
+                      -webkit-box-shadow:0px 0px 10px 3px #00f900 ;
+    -moz-box-shadow:0px 0px 10px 3px #00f900 ;
+    box-shadow:0px 0px 10px 3px #000000 ;
+                      padding:20px;
+                      margin:20px;
+                      width:30%;
+    
+    }
+                      
+
+    .myButton {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #70e038 5%, #698f56 100%);
+	background-color:#70e038;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #698f56 5%, #70e038 100%);
+	background-color:#698f56;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+    .dashboard {
+      padding: 20px;
+    }
+
+    .title-bar {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .scrollable-div {
+      overflow-y: auto;
+      max-height: 400px;
+      border: 1px solid #000000;
+      padding: 10px;
+      margin-top: 20px;
+                      
+    } 
+    table {
+        
+            font-family: 'Arial', sans-serif;
+            border: 1px solid #ccc;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+      table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        table th{
+            border: 1px solid #ccc;
+            padding: 8px;
+            background: #24943A;
+  background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+  border-bottom: 0px solid #444444;
+        }input {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #94e91e;
+	background: rgba(#6ddf1b, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #E91E63;
+
+}
+div.image-container {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+p {
+  font-size: small;
+}
+    </style>  
+  
+
+</head>
+<body onload="onLoadBody();">
+ <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+<style type="text/css">
+    
+	.hero{
+		
+
+		
+		padding-top: 50px;
+		
+
+	}
+</style>
+
+
+<div class="parallax1">
+  <div class="container-fluid text-center" style="padding: 0;margin-bottom:0;">
+     <div class="hero" style="text-align: center;">
+	     <h1 style="font-size: 50px;opacity: 1.0;color: black;">GST<small style="color: black;opacity: 1.0;"> Calculator</small></h1>
+
+     </div>
+  </div>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="openCity(event, 'fnb')">Food &amp; Beverages</button>
+  
+  <button class="tablinks" onclick="openCity(event, 'app')">Apparels</button>
+  <button class="tablinks" onclick="openCity(event, 'elec')">Electronics</button>
+  
+  <button class="tablinks" onclick="openCity(event, 'auto')">Automobiles</button>
+  <button class="tablinks" onclick="openCity(event, 'serv')">Services</button>
+  <button class="tablinks" onclick="openCity(event, 'info')">Information</button>
+</div>
+
+<div id="home" class="tabcontent">
+  <p class="home-main" style="font-size: 25px;">GST</p>
+
+  <
+</div>
+
+
+<div id="info" class="tabcontent">
+  <p class="para-hero">Here are a few definitions and further clarifications about the calculating procedure for GST.</p>
+  <br>
+  <hr>
+
+</div>
+
+
+<div id="fnb" class="tabcontent">
+  
+  <p class="para-hero">GST is levied on packaged food whereas unpackaged food attracts no GST.<br></p>
+  <hr>
+   <h3 style="margin-left: 30px;">Enter the price in Rs.</h3>
+   <br>
+    <FORM NAME="myform">
+          <INPUT TYPE="text" NAME="cost" class="inp-hero" VALUE="0"> 
+          <br>
+          <INPUT TYPE="button" NAME="button" class="btn-hero" Value="Calculate" onclick="calc();">
+          <br>
+          <INPUT TYPE="text" ID="res" NAME="result" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="res2" NAME="result" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="res3" NAME="result" class="inp1-hero" VALUE="">
+        </FORM>
+        <script type="text/javascript">
+               function calc()
+          {
+             var num1 = parseFloat(document.myform.cost.value);
+             var per;
+             var sum;
+             var tax;
+             if (num1 <= 100) {
+              tax = 0.00;
+               sum = num1;
+               per = 0;
+             } else if(num1 > 100 && num1<=500 ){
+              tax = num1 * (5/100);
+              sum = tax + num1;
+              per  = 5;
+             }
+             else{
+              tax = num1 * (18/100);
+              sum = tax + num1;
+              per  = 18;
+             }
+              
+             var a = parseFloat(tax).toFixed(2);
+             var half = a/2;
+             if(sum == 0){
+              document.getElementById('res').value = "Please Enter the price";
+              alert("Enter price!");
+             }
+             else{
+             document.getElementById('res').value = "The tax is Rs." + a + " and the cost is Rs."+ sum +" .";
+             document.getElementById('res2').value = "GST is "+ per + "% ."; 
+             document.getElementById('res3').value =  "SGST is Rs." + half + " & CGST is Rs." + half + ".";
+           }
+          }
+         
+       </script>
+
+</div>
+
+<div id="stat" class="tabcontent">
+  <h3>Stationery</h3>
+
+  
+        
+  
+</div>
+<!-- Apparels -->
+<div id="app" class="tabcontent">
+  
+  <p class="para-hero">Clothes below Rs.1000 and footwear below Rs.500 attract 5% GST whereas anything above that price will attract a GST of 12%.</p>
+  <hr>
+  
+  <h2 style="margin-left: 30px;">Clothing</h2>
+  <br>
+  
+  <h3 style="margin-left: 30px;">Enter the price in Rs.</h3>
+   <br>
+    <FORM NAME="appform">
+          <INPUT TYPE="text" NAME="costapp" class="inp-hero" VALUE="0"> 
+          <br>
+          <INPUT TYPE="button" NAME="button7" class="btn-hero" Value="Calculate" onclick="calc6();">
+          <br>
+          <INPUT TYPE="text" ID="resapp" NAME="result" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resapp2" NAME="result" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resapp3" NAME="result" class="inp1-hero" VALUE="">
+        </FORM>
+        <script type="text/javascript">
+               function calc6()
+          {
+             var n6 = parseFloat(document.appform.costapp.value);
+             
+             var sm1;
+             var tx1;
+             var perapp;
+             if (n6 <= 1000) {
+              tx1 = n6 * 0.05;
+               sm1 = n6 + tx1;
+               perapp = 5;
+             } else if(n6 > 1000){
+              tx1 = n6 * 0.12;
+              sm1 = n6 + tx1;
+              perapp = 12;
+             }
+             tx1 = parseFloat(tx1).toFixed(2);
+             var halfapp = tx1/2;
+             
+             if(sm1 == 0){
+              document.getElementById('resapp').value = "Please Enter the price";
+              alert("Enter price!");
+             }
+             else{
+             document.getElementById('resapp').value = "The tax is Rs." + tx1 + " and the cost is Rs."+ sm1 +" .";
+             document.getElementById('resapp2').value = "GST is "+ perapp + "% ."; 
+             document.getElementById('resapp3').value =  "SGST is Rs." + halfapp + " & CGST is Rs." + halfapp + ".";
+           }
+          }
+         
+       </script>
+       
+
+     <h2 style="margin-left: 30px;">Footwear</h2>
+  <br>
+  <h3 style="margin-left: 30px;">Enter the price in Rs.</h3>
+   <br>
+    <FORM NAME="footform">
+          <INPUT TYPE="text" NAME="costfoot" class="inp-hero" VALUE="0"> 
+          <br>
+          <INPUT TYPE="button" NAME="button8" class="btn-hero" Value="Calculate" onclick="calc9();">
+          <br>
+          <INPUT TYPE="text" ID="resfoot" NAME="result8" class="inp1-hero" VALUE="">
+        </FORM>
+        <script type="text/javascript">
+               function calc9()
+          {
+             var n9 = parseFloat(document.footform.costfoot.value);
+             
+             var sm9;
+             var tx9;
+             if (n9 <= 1000) {
+              tx9 = n9 * 0.05;
+               sm9 = n9 + tx9;
+             } else if(n9 > 1000){
+              tx9 = n9 * 0.12;
+              sm9 = n9 + tx9;
+             }
+             tx9 = parseFloat(tx9).toFixed(2);
+             
+             if(sm9 == 0){
+              document.getElementById('resfoot').value = "Please Enter the price";
+              alert("Enter price!");
+             }
+             else{
+             document.getElementById('resfoot').value = "The tax is Rs." + tx9 + " and the cost is Rs."+ sm9 +" .";
+             
+           }
+          }
+         
+       </script>
+</div>
+
+
+<!-- Electronics -->
+<div id="elec" class="tabcontent">
+  
+  <p class="para-hero">Home appliances get costlier with GST as they attract 28% gst and the prices of other electronic items has also went up marginally and they attract a GST of 12%.</p>
+  
+  
+  <hr>
+  
+    <h3 style="margin-left: 30px;">Select a Category</h3>
+   <form name="electron" class="select-hero">
+     <select name="electr" id="cat">
+     <option value="select" id="0" selected>Select</option>
+  <option value="mobs" id="1">Mobiles &amp; Tabs</option>
+  <option value="print" id="2">Printers</option>
+  <option value="homeap" id="3">Home Appliances</option>
+    </select>
+    </form>
+      <br>
+      <br>
+      
+      <h3 style="margin-left: 30px;">Enter the price in Rs.</h3>
+    <FORM NAME="elecform">
+          <INPUT TYPE="text" NAME="costel" class="inp-hero" VALUE=""> 
+          <br>
+          <INPUT TYPE="button" NAME="button1" class="btn-hero" Value="Calculate" onclick="calc1();">
+          <br>
+          <INPUT TYPE="text" ID="resel" NAME="result" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resel2" NAME="result" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resel3" NAME="result" class="inp1-hero" VALUE="">
+        </FORM>
+        <script type="text/javascript">
+              
+               
+
+               function calc1()
+          {
+             var num1el = parseFloat(document.elecform.costel.value);
+             var sumel;
+             var taxel;
+             var mod = document.getElementById('cat').selectedIndex;
+             var sel = parseInt(mod);
+             var perel;
+             if(sel == 1){
+              taxel = num1el * 0.12;
+              sumel = taxel + num1el;
+              perel = 12;
+             }
+             else if(sel == 2){
+              taxel = num1el * 0.18;
+              sumel = taxel + num1el;
+              perel = 18;
+             }
+             else{
+              taxel = num1el * 0.28;
+              sumel = taxel + num1el;
+              perel = 28;
+             } 
+             
+             taxel = parseFloat(taxel).toFixed(2);
+             var halfel = taxel/2;
+             if(sel == 0){
+              document.getElementById('resel').value = "Please select a category";
+              alertfun();
+             }
+             else{
+              document.getElementById('resel').value = "The tax is Rs." + taxel + " and the cost is Rs."+ sumel +" .";
+             document.getElementById('resel2').value = "GST is "+ perel + "% ."; 
+             document.getElementById('resel3').value =  "SGST is Rs." + halfel + " & CGST is Rs." + halfel + ".";
+             }
+          }
+       
+       </script>
+
+
+   
+  
+
+</div>
+
+
+<div id="hnf" class="tabcontent">
+  <h3>Health &amp; Fitness</h3>
+  
+</div>
+
+<!-- Automobiles -->
+<div id="auto" class="tabcontent">
+  
+  <p class="para-hero">GST on motorbikes depends on their engine capacity.All motorbikes with engine capacity below 350cc attract a GST of 28% and above it attract 31% GST.All cars attract a GST of 28% with an additional cess of 1% on small cars,3% on mid sized cars and 15% on Luxury and hybrid cars. </p>
+  <hr>
+
+  <h3 style="margin-left: 30px;">Select a category.</h3>
+ <form name="automob" class="select-hero">
+     <select name="aut" id="catauto">
+     <option value="select" id="0" selected>Select</option>
+  <option value="mobs" id="1">Cars</option>
+  <option value="print" id="2">Bikes</option>
+  <option value="homeap" id="3">Tractors</option>
+    </select>
+    </form>
+      <br>
+      <br>
+      <h3 style="margin-left: 30px;">Enter the price in Rs.</h3>
+    <FORM NAME="autoform">
+          <INPUT TYPE="text" NAME="costauto" class="inp-hero" VALUE=""> 
+          <br>
+          <INPUT TYPE="button" NAME="button2" class="btn-hero" Value="Calculate" onclick="calc2();">
+          <br>
+          <INPUT TYPE="text" ID="resaut" NAME="resultaut" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resaut2" NAME="resultaut2" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resaut3" NAME="resultaut3" class="inp1-hero" VALUE="">
+        </FORM>
+        <script type="text/javascript">
+              
+               
+
+               function calc2()
+          {
+             var num1aut = parseFloat(document.autoform.costauto.value);
+             var sumaut;
+             var taxaut;
+             var modaut = document.getElementById('catauto').selectedIndex;
+             var selaut = parseInt(modaut);
+             var peraut;
+             if(selaut == 1){
+              taxaut = num1aut * 0.28;
+              sumaut = taxaut + num1aut;
+              peraut = 28;
+             }
+             else if(selaut == 2){
+              taxaut = num1aut * 0.28;
+              sumaut = taxaut + num1aut;
+              peraut = 28;
+             }
+             else{
+              taxaut = num1aut * 0.18;
+              sumaut = taxaut + num1aut;
+              peraut = 18;
+             }
+             taxaut = parseFloat(taxaut).toFixed(2);
+             sumaut = parseFloat(sumaut).toFixed(2);
+             var halfaut = taxaut/2;
+
+             if(selaut == 0){
+              document.getElementById('resaut').value = "Please select a category";
+              alertfun();
+             }
+             else{
+             document.getElementById('resaut').value = "The tax is Rs." + taxaut + " and the cost is Rs."+ sumaut +" .";
+             document.getElementById('resaut2').value = "GST is "+ peraut + "% ."; 
+             document.getElementById('resaut3').value =  "SGST is Rs." + halfaut + " & CGST is Rs." + halfaut + ".";
+             }
+           }
+       
+       </script>
+
+ 
+</div>
+
+<!-- Services -->
+<div id="serv" class="tabcontent">
+  
+  <p class="para-hero">Services include transport,movies,accomodation in hotels and supply of food and beverages in restaurants.Transport of passengers and goods (by air and rail) will be under 5% gst.Whereas transport by air in other than economy class attracts 12% gst.Hotels and lodges with tariff below Rs.1,000 attract no GST.12% GST is levied on tariffs upto Rs.2500,18% upto Rs.7500 and 28% gst on above Rs.7500.Watching movies will get costlier as movie tickets attract 28% GST.</p>
+  <hr>
+  
+  <div style="margin-top: 50px;font-size: 20px;">
+  <h3 style="margin-left:50px; ">Select a Category</h3>
+  <form name="servcat" class="select-hero">
+   <select id="servid">
+   <option   id="0" selected>Select</option>
+     <option id="1">Hotels &amp; Lodges</option>
+     <option id="2">Movies</option>
+     <option id="3">Transport (Airways &amp; Railways)</option>
+     <option id="4">Airways (Other than econ. class)</option>
+   </select>
+  </form>
+  <br>
+  <h3 style="margin-left: 30px;">Enter the price in Rs.</h3>
+  
+
+   <FORM NAME="servform">
+          <INPUT TYPE="text" NAME="costserv" class="inp-hero" VALUE=""> 
+          <br>
+          <INPUT TYPE="button" NAME="button3" class="btn-hero" Value="Calculate" onclick="calc3();">
+          <br>
+          <INPUT TYPE="text" ID="resserv" NAME="result3" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resserv1" NAME="result3" class="inp1-hero" VALUE=""><br>
+          <INPUT TYPE="text" ID="resserv2" NAME="result3" class="inp1-hero" VALUE="">
+        </FORM>
+   <script type="text/javascript">
+     function calc3(){
+          var o = parseInt(document.getElementById('servid').selectedIndex);
+          
+        var n5 = parseFloat(document.servform.costserv.value);
+        var tx;
+        var sm;
+        var perserv;
+
+        if(o == 1){
+
+          if(n5 <= 1000){
+            tx =0;
+            sm = n5;
+            perserv = 0;
+          }
+          else if(n5 >1000 && n5<=2500){
+            tx = n5 *0.12;
+            sm = n5 + tx;
+            perserv = 12;
+          }
+          else if(n5 >2500 && n5<7500){
+            tx = n5 * 0.18;
+            sm = n5 + tx;
+            perserv = 18;
+
+          }
+          else
+          {
+            tx = n5 * 0.28;
+            sm = n5 + tx;
+            perserv = 28;
+          }
+
+        }
+        else if(o == 2)
+        {
+          tx = n5 * 0.28;
+          sm = n5 + tx;
+          perserv = 28;
+        }
+        else if(o == 3){
+          tx = n5 * 0.05;
+          sm = n5 + tx;
+          perserv = 5;
+
+        }
+        else if(o == 4){
+          tx = n5 * 0.12;
+          sm = n5 + tx;
+          perserv = 12;
+        }
+
+        sm = parseFloat(sm).toFixed(2);
+        tx = parseFloat(tx).toFixed(2);
+        var halfserv = tx/2;
+        if (o == 0) {
+          document.getElementById('resserv').value = "Please Select a category";
+          alertfun();
+        } else {
+        
+        document.getElementById('resserv').value = "The tax is Rs." + tx + " and the cost is Rs."+ sm +" .";
+             document.getElementById('resserv1').value = "GST is "+ perserv + "% ."; 
+             document.getElementById('resserv2').value =  "SGST is Rs." + halfserv + " & CGST is Rs." + halfserv + ".";
+       
+        
+         }
+
+
+
+
+
+
+     }
+
+     
+   </script>
+
+  </div></div>
+
+
+</div>
+
+
+
+
+
+
+<div class="text-box2">
+  <p>For more information about GST click <span><a href="http://economictimes.indiatimes.com/gst" style="color: white;">here</a></span></p>
+  
+</div>
+
+
+
+
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+function alertfun(){
+  alert("Please choose a category!");
+
+}
+
+</script>
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script type="text/javascript">
+  function onLoadBody() {
+    document.getElementById('resel').readOnly = true;
+    document.getElementById('res2').readOnly = true;
+    document.getElementById('res3').readOnly = true;
+    document.getElementById('res').readOnly = true;
+
+    document.getElementById('resapp').readOnly = true;
+    document.getElementById('resapp2').readOnly = true;
+    document.getElementById('resapp3').readOnly = true;
+
+    document.getElementById('resfoot').readOnly = true;
+
+    document.getElementById('resel').readOnly = true;
+    document.getElementById('resel2').readOnly = true;
+    document.getElementById('resel3').readOnly = true;
+
+    document.getElementById('resaut').readOnly = true;
+    document.getElementById('resaut2').readOnly = true;
+    document.getElementById('resaut3').readOnly = true;
+
+    document.getElementById('resserv').readOnly = true;
+    document.getElementById('resserv2').readOnly = true;
+    document.getElementById('resserv1').readOnly = true;
+  } 
+</script>
+
+
+
+
+</body>
+</html>
